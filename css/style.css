@@ -50,7 +50,8 @@ body{
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%,-50%)
+    transform: translate(-50%,-50%);
+    text-align: center;
 
 }
 .heading-primary-main{
@@ -59,6 +60,8 @@ body{
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    
+    
     animation: slide-right 1s ease-in;
     
 }
@@ -68,7 +71,69 @@ body{
     font-weight: 300;
     letter-spacing: 15px;
     animation: slide-left 1s ease-in;
+    backface-visibility: hidden;
     
+}
+
+.button-main:link,
+.button-main:visited{
+    display: inline-block;
+    text-decoration: none;
+    color: #777;
+    text-align: right;
+    padding:12px 50px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    transition: all .2s;
+    position: relative;
+   
+
+
+}
+.button-main:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.button-main:active{
+    transform: translateY(.5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+}
+
+.button-main::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .3s;
+
+}
+
+
+.button-main--bg_white::after{
+    background-color: #fff;
+
+}
+
+.button-main:hover::after{
+    transform: scale(1.5);
+    /* z-index: 1; */
+    opacity: 0;
+}
+
+
+.button-main--bg_white{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.button-animated{
+    animation: slide-bottom 1s ease-in .75s backwards;
 }
 
 @keyframes slide-right{
@@ -106,6 +171,25 @@ body{
     100%{
         opacity: 1;
         transform: translateX(0)
+
+}
+
+}
+
+@keyframes slide-bottom{
+    0%{
+        opacity: 0;
+        transform: translateY(100px)
+
+    }
+
+    50%{
+
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0)
 
 }
 
