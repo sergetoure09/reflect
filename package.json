@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass ./sass/sass.scss ./css/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sergetoure09/reflect/issues"
   },
-  "homepage": "https://github.com/sergetoure09/reflect#readme"
+  "homepage": "https://github.com/sergetoure09/reflect#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
 }
