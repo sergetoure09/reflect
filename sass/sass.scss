@@ -42,6 +42,17 @@ body{
     position: relative;
 }
 
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
+}
+
 
 
 
@@ -61,16 +72,7 @@ body{
 
 }
 
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
 
-}
 .heading-primary-main{
     
     display: block;
