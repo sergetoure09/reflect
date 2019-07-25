@@ -1,33 +1,26 @@
-.row{
+.row {
+  @include clearfix;
+  max-width: $max_width;
+  margin: 0 auto;
 
-    @include clearfix;
-    max-width: $max_width;
-    margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: $v_gutter;
+  }
 
-    &:not(:last-child){
-        margin-bottom: $v_gutter;
+  & > [class^="col"] {
+    float: left;
+    background-color: orangered;
+    height: 25px;
+    // padding: 5px;
+
+    &:not(:last-child) {
+      margin-right: $h_gutter;
     }
+  }
 
-
-    & > [class ^="col"]{
-        float: left;
-        background-color: orangered;
-        height: 25px;
-       // padding: 5px;
-        
-        &:not(:last-child){
-            margin-right: $h_gutter;
-        }
-        
+  @for $i from 1 to $nb_columns {
+    & > [class="col-#{$i}-#{$nb_columns}"] {
+      width: calc((#{$i} * #{$one_column_width}) + (#{$i} - 1) * #{$h_gutter});
     }
-
-    @for $i from 1 to $nb_columns{
-
-        & > [class ="col-#{$i}-#{$nb_columns}"]{
-            width: calc((#{$i} * #{$one_column_width}) + (#{$i} - 1) * #{$h_gutter});
-            
-        }
-    }
-
-
+  }
 }
